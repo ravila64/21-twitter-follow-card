@@ -1,0 +1,25 @@
+import { useState } from 'react'
+import './App.css'
+import { TwitterFollowCard } from './TwitterCard.jsx'
+
+export function App() {
+  //     name=vr estado  setName=como actualizar el estado
+  const [name, setName] = useState('midudev');
+  
+  return (
+    <section className='App'>
+      <>
+        <TwitterFollowCard userName={name}>
+          Miguel Angel Duran
+        </TwitterFollowCard>
+
+        <TwitterFollowCard userName='ReneAvilaAlonso'>
+          Rene Avila A
+        </TwitterFollowCard>
+        <button onClick={() => setName('pedromichel')}>
+          Cambio Nombre
+        </button>
+      </>
+    </section>
+  )
+}

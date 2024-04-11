@@ -1,0 +1,56 @@
+import { useState } from 'react'
+import './App.css'
+import { TwitterFollowCard } from './TwitterCard.jsx'
+
+const users = [
+  {
+    userName: 'midudev',
+    name: 'Miguel Ángel Durán',
+    isFollowing: true
+  },
+  {
+    userName: 'pheralb',
+    name: 'Pablo H.',
+    isFollowing: false
+  },
+  {
+    userName: 'PacoHdezs',
+    name: 'Paco Hernandez',
+    isFollowing: true
+  },
+  {
+    userName: 'TMChein',
+    name: 'Tomas Chein',
+    isFollowing: false
+  }
+]
+
+export function App() {
+  //const midudev={initialIsFollowing:true, userName:'mididev'};
+  //const pheralb={initialIsFollowing:false, userName:'pheralb'};
+  const [name, setName] = useState('midudev');
+  return (
+    <section className='App'>
+      /* aqui circhete de apertura  */
+        // <>
+        // <TwitterFollowCard {...midudev}>Miguel Angel</TwitterFollowCard>
+        // <TwitterFollowCard {...pheralb}>Pablo Hernandez</TwitterFollowCard>
+        // </>
+
+        // opcion 2
+        <>
+          <TwitterFollowCard userName={name}>
+            Miguel Angel Duran
+          </TwitterFollowCard>
+
+          <TwitterFollowCard userName={name}>
+            Pablo Hernandez
+          </TwitterFollowCard>
+          <button onClick={()=> setName('pedromichel')}>
+            Cambio Nombre
+          </button>
+        </>
+    /*  corchete de cierre */
+    </section>
+  )
+}
